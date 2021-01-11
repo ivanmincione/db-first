@@ -1,0 +1,26 @@
+USED CARS => First db		
+
+			PROPERTY-TYPE		ATTRIBUTES
+
+id			INT 			PRIMARY KEY, AUTO_INCREMENT, NOT NULL, UNIQUE, INDEX		
+Marca			VARCHAR(20)		NOTNULL, INDEX
+Modello			VARCHAR(20)		NOTNULL, INDEX
+Anno			DATE			NOTNULL, INDEX
+Immatricolazione	DATE			NOTNULL
+Colore			VARCHAR(15)		NOTNULL
+Km			INT			NOTNULL
+Alimentazione		VARCHAR(15)		NOTNULL
+Potenza CV		SMALLINT		NOTNULL
+Potenza KW		SMALLINT		NOTNULL
+Tipologia di cambio	VARCHAR(15)		NOTNULL
+Prezzo Vendita		DECIMAL(10, 3)	 	NOTNULL, INDEX
+Marce			TINYINT			NULL
+Porte			TINYINT			NULL
+Disponibilità		TINYINT 		NULL, DEFAULT(1)
+Revisionata		TINYINT 		NULL, DEFAULT(1)
+Incidentata		TINYINT 		NULL, DEFAULT(0)
+Descrizione		TEXT 			NULL, DEFAULT("Automobile usata...")
+Num Proprietari		TINYINT			NOTNULL, DEFAULT(1)
+Emissioni		VARCHAR(15)		NULL
+Optional		VARCHAR(255)		NULL, DEFAULT("n.d.")
+
