@@ -18,6 +18,7 @@ tipo			VARCHAR(20)	NOTNULL,INDEX
 posti			TINYINT		NOTNULL
 descrizione		TEXT		NULL
 locazione		VARCHAR(15)	NULL
+prezzo			DECIMAL(6,2)	NOTNULL, INDEX
 
 
 
