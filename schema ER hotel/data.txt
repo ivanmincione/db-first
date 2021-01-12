@@ -1,0 +1,41 @@
+Dati per il DB Hotel:
+
+table CLIENTI
+
+id_cliente		INT		PRIMARY KEY, AUTO_INCREMENT, NOT NULL, UNIQUE, INDEX
+nome			VARCHAR(20)	NOTNULL				
+cognome			VARCHAR(20)	NOTNULL	
+indirizzo		VARCHAR(80)	NOTNULL
+telefono		VARCHAR(20)	NOTNULL
+email			VARCHAR(40)	NOTNULL
+
+
+table CAMERE
+
+id_camera		INT		PRIMARY KEY, AUTO_INCREMENT, NOT NULL, UNIQUE, INDEX
+numero			SMALLINT	NOTNULL
+tipo			VARCHAR(20)	NOTNULL,INDEX
+posti			TINYINT		NOTNULL
+descrizione		TEXT		NULL
+locazione		VARCHAR(15)	NULL
+
+
+
+table PRENOTAZIONI
+
+id			INT		PRIMARY KEY, AUTO_INCREMENT, NOT NULL, UNIQUE, INDEX
+cliente			INT		FOREIGN KEY refere to CLIENTI id_cliente
+camera			INT		FOREIGN KEY refere to CAMERE id_camera
+data_arrivo		DATE		NOTNULL, INDEX
+data_partenza		DATE		NOTNULL
+cancellazione		TINYINT		NULL, DEFAULT(0)
+note			VARCHAR(255)	NULL, DEFAULT("nessuna richiesta particolare da parte del cliente")
+num_ospiti		TINYINT		NOTNULL, DEFAULT(1)
+
+
+table SOGGIORNI
+
+id			INT		PRIMARY KEY, AUTO_INCREMENT, NOT NULL, UNIQUE, INDEX
+id_prenotazione		INT		FOREIGN KEY refere to PRENOTAZIONI id_prenotazioni
+id_cliente		INT		FOREIGN KEY refere to CLIENTI id_cliente
+doc_cliente		VARCHAR(100)	NOTNULL	
